@@ -1,0 +1,62 @@
+name: Release
+run-name: 'Release — ${{ github.event.workflow_run.head_commit.message }}'
+
+on:
+  workflow_run:
+    # Must match the `name:` field in ci.yml exactly — a rename there will silently break this trigger
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    name: Create Release PRs
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    outputs:
+      plugin-release-created: ${{ steps.release.outputs['packages/sanity-plugin-blank-space--release_created'] }}
+    steps:
+      - name: Run release-please
+        uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish-plugin:
+    name: Publish sanity-plugin-blank-space
+    needs: release-please
+    if: needs.release-please.outputs.plugin-release-created == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: lts/*
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build packages
+        run: pnpm build:packages
+
+      - name: Publish to npm
+        run: pnpm --filter sanity-plugin-blank-space publish --no-git-checks
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true

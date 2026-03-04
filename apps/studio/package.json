@@ -1,0 +1,23 @@
+{
+  "name": "studio",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sanity/vision": "^5.13.0",
+    "react": "^19.2.4",
+    "react-dom": "catalog:",
+    "sanity": "^5.13.0",
+    "sanity-plugin-blank-space": "workspace:*",
+    "styled-components": "^6.3.11"
+  },
+  "devDependencies": {
+    "@types/react": "catalog:",
+    "typescript": "catalog:"
+  }
+}

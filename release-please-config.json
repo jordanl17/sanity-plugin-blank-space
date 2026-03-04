@@ -1,0 +1,15 @@
+{
+  "changelog-sections": [
+    {"type": "feat", "section": "Features"},
+    {"type": "fix", "section": "Bug Fixes"},
+    {"type": "refactor", "section": "Refactoring", "hidden": false},
+    {"type": "docs", "section": "Documentation", "hidden": false},
+    {"type": "chore", "section": "Miscellaneous", "hidden": false}
+  ],
+  "packages": {
+    "packages/sanity-plugin-blank-space": {
+      "release-type": "node",
+      "package-name": "sanity-plugin-blank-space"
+    }
+  }
+}
