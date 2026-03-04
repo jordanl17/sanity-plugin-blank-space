@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-blank-space",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "license": "MIT",
   "description": "A Sanity Studio plugin for adding blank space between fields",
