@@ -3,10 +3,14 @@
   "version": "0.1.2",
   "type": "module",
   "license": "MIT",
-  "description": "A Sanity Studio plugin for adding blank space between fields",
+  "description": "A Sanity Studio plugin that renders a custom component in the structure tool's empty pane area",
   "keywords": [
     "sanity",
-    "sanity-plugin"
+    "sanity-plugin",
+    "structure",
+    "home",
+    "landing",
+    "welcome"
   ],
   "homepage": "https://github.com/jordanl17/sanity-plugin-blank-space#readme",
   "repository": {
@@ -64,6 +68,8 @@
     "@sanity/pkg-utils": "^10.4.6",
     "@sanity/plugin-kit": "^4.0.20",
     "@sanity/ui": "^3.1.13",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "react-dom": "catalog:",
     "rimraf": "catalog:",
     "typescript": "catalog:"

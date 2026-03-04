@@ -1,16 +1,36 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
-import {blankSpacePlugin} from 'sanity-plugin-blank-space'
+import {structureHomeLandingPlugin} from 'sanity-plugin-blank-space'
+import {WelcomePane} from './components/WelcomePane'
+import {UserGreetingPane} from './components/UserGreetingPane'
 import {schemaTypes} from './schemaTypes'
 
-export default defineConfig({
-  name: 'default',
-  title: 'Blank Space Dev',
+const sharedConfig = {
   projectId: 'i2zyueht',
   dataset: 'production',
-  plugins: [structureTool(), visionTool(), blankSpacePlugin()],
   schema: {
     types: schemaTypes,
   },
-})
+} as const
+
+export default [
+  defineConfig({
+    ...sharedConfig,
+    name: 'default',
+    title: 'Default Home',
+    basePath: '/default',
+    plugins: [structureTool(), structureHomeLandingPlugin({component: WelcomePane})],
+  }),
+  defineConfig({
+    ...sharedConfig,
+    name: 'greeting',
+    title: 'User Greeting',
+    basePath: '/greeting',
+    plugins: [
+      structureTool(),
+      visionTool(),
+      structureHomeLandingPlugin({component: UserGreetingPane, title: 'Hello There'}),
+    ],
+  }),
+]

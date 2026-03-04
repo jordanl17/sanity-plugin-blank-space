@@ -1,10 +1,8 @@
-import {definePlugin} from 'sanity'
-
-import type {BlankSpacePluginConfig} from './types'
+/** @public */
+export {DEFAULT_HOME_PANE_ID, DEFAULT_HOME_PANE_TITLE} from './createWrappedResolver'
 
 /** @public */
-export const blankSpacePlugin = definePlugin<BlankSpacePluginConfig | void>((_config) => {
-  return {
-    name: 'sanity-plugin-blank-space',
-  }
-})
+export {structureHomeLandingPlugin} from './structureHomeLandingPlugin'
+
+/** @public */
+export type {StructureHomeLandingPluginOptions} from './types'

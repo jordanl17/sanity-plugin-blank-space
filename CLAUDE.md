@@ -6,9 +6,9 @@ Turborepo monorepo with one publishable npm package and a dev studio app.
 
 ### Packages
 
-| Package                     | Path                                 | Description                                        |
-| --------------------------- | ------------------------------------ | -------------------------------------------------- |
-| `sanity-plugin-blank-space` | `packages/sanity-plugin-blank-space` | Sanity Studio plugin for adding blank space fields |
+| Package                     | Path                                 | Description                                                                                  |
+| --------------------------- | ------------------------------------ | -------------------------------------------------------------------------------------------- |
+| `sanity-plugin-blank-space` | `packages/sanity-plugin-blank-space` | Sanity Studio plugin that renders a custom component in the structure tool's empty pane area |
 
 ### Apps (dev only, not published)
 
@@ -59,6 +59,13 @@ Turborepo monorepo with one publishable npm package and a dev studio app.
 ## Peer Dependencies
 
 - `sanity-plugin-blank-space` supports `sanity ^3.0.0 || ^4.0.0 || ^5.0.0` and `react ^18.0.0 || ^19.0.0`
+
+## Plugin Architecture
+
+- **`activeToolLayout` middleware** - intercepts the structure tool's configuration to inject a wrapped structure resolver
+- **`createWrappedResolver`** - handles a virtual `__home__` pane ID that renders the configured component, delegating all other IDs to the original resolver
+- **`StructureHomeRedirector`** - auto-navigates to the `__home__` pane when the structure tool opens with no panes selected
+- The plugin wraps any existing structure resolver transparently - no changes needed to existing structure configuration
 
 ## Workflow
 
