@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v0.1.1...sanity-plugin-blank-space-v0.1.2) (2026-03-04)
+
+
+### Miscellaneous
+
+* trigger release ([93a67e6](https://github.com/jordanl17/sanity-plugin-blank-space/commit/93a67e69fb73c6201401b421fcf4f6fe2311c819))
+
 ## [0.1.1](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v0.1.0...sanity-plugin-blank-space-v0.1.1) (2026-03-04)
 
 
