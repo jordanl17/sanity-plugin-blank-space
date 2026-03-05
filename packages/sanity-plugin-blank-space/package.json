@@ -58,16 +58,12 @@
     "yalc:publish": "npx yalc publish"
   },
   "peerDependencies": {
-    "@sanity/icons": "^3.0.0",
-    "@sanity/ui": "^2.0.0 || ^3.0.0",
     "react": "^18.0.0 || ^19.0.0",
     "sanity": "^3.0.0 || ^4.0.0 || ^5.0.0"
   },
   "devDependencies": {
-    "@sanity/icons": "^3.7.4",
     "@sanity/pkg-utils": "^10.4.6",
     "@sanity/plugin-kit": "^4.0.20",
-    "@sanity/ui": "^3.1.13",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "react-dom": "catalog:",

@@ -127,18 +127,12 @@ importers:
         specifier: ^3.0.0 || ^4.0.0 || ^5.0.0
         version: 5.13.0(@emotion/is-prop-valid@1.4.0)(@noble/hashes@2.0.1)(@types/node@25.3.3)(@types/react@19.2.14)(babel-plugin-react-compiler@1.0.0)(jiti@2.6.1)(lightningcss@1.31.1)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(styled-components@6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(terser@5.46.0)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
     devDependencies:
-      '@sanity/icons':
-        specifier: ^3.7.4
-        version: 3.7.4(react@19.2.4)
       '@sanity/pkg-utils':
         specifier: ^10.4.6
         version: 10.4.6(@types/babel__core@7.20.5)(@types/node@25.3.3)(babel-plugin-react-compiler@1.0.0)(typescript@5.9.3)
       '@sanity/plugin-kit':
         specifier: ^4.0.20
         version: 4.0.20(@types/babel__core@7.20.5)(@types/node@25.3.3)(babel-plugin-react-compiler@1.0.0)(eslint@10.0.2(jiti@2.6.1))(typescript@5.9.3)
-      '@sanity/ui':
-        specifier: ^3.1.13
-        version: 3.1.13(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react-is@19.2.4)(react@19.2.4)(styled-components@6.3.11(react-dom@19.2.4(react@19.2.4))(react@19.2.4))
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
