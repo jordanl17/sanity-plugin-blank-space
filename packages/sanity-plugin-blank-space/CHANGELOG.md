@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v1.0.0...sanity-plugin-blank-space-v1.0.1) (2026-03-05)
+
+
+### Bug Fixes
+
+* remove unused dependencies from pnpm-lock.yaml and package.json for sanity-plugin-blank-space ([78c1378](https://github.com/jordanl17/sanity-plugin-blank-space/commit/78c13780259c9bdd733bff5148b87c216b155a6e))
+
 ## [1.0.0](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v0.2.0...sanity-plugin-blank-space-v1.0.0) (2026-03-05)
 
 
