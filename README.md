@@ -53,6 +53,99 @@ function UserGreeting() {
 }
 ```
 
+## Quick Actions Example
+
+Use `useDocumentTypes` to build a "create new" panel - it returns user-defined document types from the schema, filtering out internal `sanity.*` types. Pair it with `IntentLink` or `useIntentLink` from `sanity/router` for navigation:
+
+```tsx
+import {IntentLink} from 'sanity/router'
+import {Card, Stack, Flex, Heading, Button} from '@sanity/ui'
+import {useDocumentTypes} from 'sanity-plugin-blank-space'
+import {AddIcon} from '@sanity/icons'
+
+function QuickActions() {
+  const documentTypes = useDocumentTypes()
+
+  return (
+    <Flex align="center" justify="center" height="fill">
+      <Card padding={5}>
+        <Stack space={4}>
+          <Heading size={2}>Create New</Heading>
+          {documentTypes.map((docType) => (
+            <Button
+              key={docType.name}
+              as={IntentLink}
+              intent="create"
+              params={{type: docType.name}}
+              icon={docType.icon ?? AddIcon}
+              text={docType.title}
+              mode="ghost"
+            />
+          ))}
+        </Stack>
+      </Card>
+    </Flex>
+  )
+}
+```
+
+## Popular Document Types Example
+
+Use `usePopularDocumentTypes` to rank document types by count. Pair with `useIntentLink` to add a create action per type:
+
+```tsx
+import {AddIcon} from '@sanity/icons'
+import {Badge, Button, Card, Flex, Heading, Spinner, Stack, Text} from '@sanity/ui'
+import {useIntentLink} from 'sanity/router'
+import {usePopularDocumentTypes} from 'sanity-plugin-blank-space'
+
+function CreateButton({type}: {type: string}) {
+  const {onClick, href} = useIntentLink({intent: 'create', params: {type}})
+  return (
+    <Button
+      as="a"
+      href={href}
+      onClick={onClick}
+      icon={AddIcon}
+      mode="ghost"
+      padding={2}
+      tone="primary"
+    />
+  )
+}
+
+function PopularTypes() {
+  const {data, isLoading, error} = usePopularDocumentTypes()
+
+  if (isLoading) return <Spinner />
+  if (error) return <Text>Failed to load document counts</Text>
+
+  return (
+    <Flex align="center" justify="center" height="fill">
+      <Card padding={5}>
+        <Stack space={4}>
+          <Heading size={2}>Popular Types</Heading>
+          {data.map((docType) => (
+            <Flex key={docType.name} align="center" gap={3}>
+              {docType.icon && (
+                <Text>
+                  <docType.icon />
+                </Text>
+              )}
+              <Text weight="semibold" flex={1}>
+                {docType.title}
+              </Text>
+              <Badge tone="primary">{docType.documentCount}</Badge>
+              <CreateButton type={docType.name} />
+            </Flex>
+          ))}
+        </Stack>
+      </Card>
+    </Flex>
+  )
+}
+```
+
 ## API Reference
 
 ### `structureHomeLandingPlugin(options)`
@@ -62,6 +155,46 @@ function UserGreeting() {
 | `component` | `ComponentType` | Yes      | -           | React component to render in the empty pane     |
 | `title`     | `string`        | No       | `"Welcome"` | Label shown in the pane header                  |
 | `paneId`    | `string`        | No       | `"home"`    | Internal pane ID used in the Studio URL routing |
+
+### `useDocumentTypes()`
+
+React hook that returns user-defined document types from the Studio schema.
+
+Returns `DocumentTypeInfo[]`:
+
+| Property | Type            | Description                             |
+| -------- | --------------- | --------------------------------------- |
+| `name`   | `string`        | The document type name                  |
+| `title`  | `string`        | Display title (falls back to `name`)    |
+| `icon`   | `ComponentType` | Optional icon component from the schema |
+
+### `usePopularDocumentTypes(limit?)`
+
+React hook that returns document types sorted by document count, most popular first. Pairs `useDocumentTypes()` with a GROQ count query.
+
+| Parameter | Type     | Required | Default | Description                      |
+| --------- | -------- | -------- | ------- | -------------------------------- |
+| `limit`   | `number` | No       | -       | Cap the number of returned types |
+
+Returns `UsePopularDocumentTypesResult`:
+
+| Property    | Type                      | Description                       |
+| ----------- | ------------------------- | --------------------------------- |
+| `data`      | `DocumentTypeWithCount[]` | Types sorted by count, descending |
+| `isLoading` | `boolean`                 | `true` while counts are loading   |
+| `error`     | `Error \| null`           | Fetch error, if any               |
+
+### `DocumentTypeWithCount`
+
+Extends `DocumentTypeInfo` with:
+
+| Property        | Type     | Description                           |
+| --------------- | -------- | ------------------------------------- |
+| `documentCount` | `number` | Documents of this type in the dataset |
+
+### `UsePopularDocumentTypesResult`
+
+TypeScript interface for the `usePopularDocumentTypes()` return value.
 
 ### `StructureHomeLandingPluginOptions`
 

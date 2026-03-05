@@ -6,3 +6,13 @@ export {structureHomeLandingPlugin} from './structureHomeLandingPlugin'
 
 /** @public */
 export type {StructureHomeLandingPluginOptions} from './types'
+
+/** @public */
+export {useDocumentTypes, type DocumentTypeInfo} from './useDocumentTypes'
+
+/** @public */
+export {
+  usePopularDocumentTypes,
+  type DocumentTypeWithCount,
+  type UsePopularDocumentTypesResult,
+} from './usePopularDocumentTypes'
