@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.2.0](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v0.1.2...sanity-plugin-blank-space-v0.2.0) (2026-03-05)
+
+
+### Features
+
+* add quick actions and popular document types ([d2cd5e2](https://github.com/jordanl17/sanity-plugin-blank-space/commit/d2cd5e25852db611bad5e31b4a4500d1be007999))
+* sanity plugin blank space primary impl with testing coverage and docs ([ef60865](https://github.com/jordanl17/sanity-plugin-blank-space/commit/ef6086575fd85a54eecbbd6f3791954c0aacb5ef))
+
+
+### Documentation
+
+* update README with package details and usage examples; add demo image ([8604f34](https://github.com/jordanl17/sanity-plugin-blank-space/commit/8604f34d51be790fe2b234b54d1a6d2a19acceb0))
+
 ## [0.1.2](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v0.1.1...sanity-plugin-blank-space-v0.1.2) (2026-03-04)
 
 
