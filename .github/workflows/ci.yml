@@ -82,3 +82,6 @@ jobs:
 
       - name: Test sanity plugin
         run: pnpm vitest run
+
+      - name: Type check
+        run: pnpm type-check
