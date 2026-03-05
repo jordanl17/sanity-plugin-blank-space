@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v0.2.0...sanity-plugin-blank-space-v1.0.0) (2026-03-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* enhance PopularTypesPane with improved layout and icons; add demo image to README
+
+### Features
+
+* enhance PopularTypesPane with improved layout and icons; add demo image to README ([e0de871](https://github.com/jordanl17/sanity-plugin-blank-space/commit/e0de871f4b5c1d44dc3c1b05635482002e4b5afb))
+
 ## [0.2.0](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v0.1.2...sanity-plugin-blank-space-v0.2.0) (2026-03-05)
 
 
