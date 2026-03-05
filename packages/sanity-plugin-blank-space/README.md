@@ -7,7 +7,7 @@ A [Sanity Studio](https://www.sanity.io/studio) plugin that renders a custom com
 ## Installation
 
 ```sh
-pnpm add sanity-plugin-blank-space
+npm install sanity-plugin-blank-space
 ```
 
 ## Usage
@@ -105,7 +105,7 @@ function QuickActions() {
 
 ### Popular Document Types
 
-Use `usePopularDocumentTypes` to rank document types by count. Pair with `useIntentLink` to add a create action per type:
+Use `usePopularDocumentTypes` to rank document types by count. Pair with `useIntentLink` to add a create action per type. The [example Studio implementation](https://github.com/jordanl17/sanity-plugin-blank-space/blob/main/apps/studio/components/PopularTypesPane.tsx) extends this with a card layout and icons.
 
 ```tsx
 import {AddIcon} from '@sanity/icons'
@@ -159,6 +159,8 @@ function PopularTypes() {
   )
 }
 ```
+
+![Popular Document Types pane showing document type list with counts and create buttons](https://raw.githubusercontent.com/jordanl17/sanity-plugin-blank-space/main/.github/assets/popular-document-types.png)
 
 ## API Reference
 
@@ -215,6 +217,8 @@ TypeScript interface for the `usePopularDocumentTypes()` return value.
 TypeScript interface for the plugin options, exported for use in typed configurations.
 
 ## Development
+
+The [example Studio](https://github.com/jordanl17/sanity-plugin-blank-space/tree/main/apps/studio) has [four workspaces](https://github.com/jordanl17/sanity-plugin-blank-space/blob/main/apps/studio/sanity.config.ts), one for each component example above.
 
 ```sh
 pnpm install

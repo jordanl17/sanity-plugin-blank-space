@@ -1,10 +1,12 @@
 import {defineType, defineField} from 'sanity'
+import {DocumentIcon, ComposeIcon, UserIcon, TagIcon} from '@sanity/icons'
 import {taylorSwiftTypes} from './taylorSwift'
 
 const testDocument = defineType({
   name: 'testDocument',
   title: 'Test Document',
   type: 'document',
+  icon: DocumentIcon,
   fields: [
     defineField({
       name: 'title',
@@ -18,6 +20,7 @@ const blogPost = defineType({
   name: 'blogPost',
   title: 'Blog Post',
   type: 'document',
+  icon: ComposeIcon,
   fields: [
     defineField({
       name: 'title',
@@ -49,6 +52,7 @@ const author = defineType({
   name: 'author',
   title: 'Author',
   type: 'document',
+  icon: UserIcon,
   fields: [
     defineField({
       name: 'name',
@@ -67,6 +71,7 @@ const category = defineType({
   name: 'category',
   title: 'Category',
   type: 'document',
+  icon: TagIcon,
   fields: [
     defineField({
       name: 'title',
