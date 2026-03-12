@@ -44,7 +44,10 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild"
-    ]
+    ],
+    "overrides": {
+      "sanity": "5.14.1"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

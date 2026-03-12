@@ -11,10 +11,10 @@
   "dependencies": {
     "@sanity/icons": "^3.7.4",
     "@sanity/ui": "^3.1.13",
-    "@sanity/vision": "^5.13.0",
+    "@sanity/vision": "^5.14.1",
     "react": "^19.2.4",
     "react-dom": "catalog:",
-    "sanity": "^5.13.0",
+    "sanity": "^5.14.1",
     "sanity-plugin-blank-space": "workspace:*",
     "styled-components": "^6.3.11"
   },
