@@ -46,7 +46,7 @@
       "esbuild"
     ],
     "overrides": {
-      "sanity": "5.17.1"
+      "sanity": "5.18.0"
     }
   },
   "lint-staged": {
