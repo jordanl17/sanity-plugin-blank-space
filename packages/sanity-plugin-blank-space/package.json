@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-blank-space",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "license": "MIT",
   "description": "A Sanity Studio plugin that renders a custom component in the structure tool's empty pane area",

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v1.0.1...sanity-plugin-blank-space-v1.0.2) (2026-04-07)
+
+
+### Miscellaneous
+
+* merge renovate/sanity into copilot/sub-pr-12 ([98014f1](https://github.com/jordanl17/sanity-plugin-blank-space/commit/98014f18f3e2021be7c4d857dcd3d8adc1b7204f))
+
 ## [1.0.1](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v1.0.0...sanity-plugin-blank-space-v1.0.1) (2026-03-05)
 
 
