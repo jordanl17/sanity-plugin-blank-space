@@ -65,8 +65,14 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Set sanity override to ${{ matrix.sanity-version }}
-        run: pnpm pkg set "pnpm.overrides.sanity=${{ matrix.sanity-version }}"
+      - name: Pin sanity to ${{ matrix.sanity-version }}
+        run: |
+          node -e "
+            const fs = require('fs');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
+            pkg.pnpm.overrides = {...(pkg.pnpm.overrides || {}), sanity: '${{ matrix.sanity-version }}'};
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
+          "
 
       - name: Remove lockfile for clean dependency resolution
         run: rm pnpm-lock.yaml
