@@ -26,21 +26,10 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: lts/*
-
-      - name: Pin sanity to 6.x
-        run: |
-          node -e "
-            const fs = require('fs');
-            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
-            pkg.pnpm.overrides = {...(pkg.pnpm.overrides || {}), sanity: '6.x'};
-            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
-          "
-
-      - name: Remove lockfile for clean dependency resolution
-        run: rm pnpm-lock.yaml
+          cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build packages
         run: pnpm build:packages
@@ -76,14 +65,8 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: Pin sanity to ${{ matrix.sanity-version }}
-        run: |
-          node -e "
-            const fs = require('fs');
-            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf-8'));
-            pkg.pnpm.overrides = {...(pkg.pnpm.overrides || {}), sanity: '${{ matrix.sanity-version }}'};
-            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
-          "
+      - name: Set sanity override to ${{ matrix.sanity-version }}
+        run: pnpm pkg set "pnpm.overrides.sanity=${{ matrix.sanity-version }}"
 
       - name: Remove lockfile for clean dependency resolution
         run: rm pnpm-lock.yaml
