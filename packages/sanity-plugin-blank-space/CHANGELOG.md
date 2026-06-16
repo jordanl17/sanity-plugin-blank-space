@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v1.0.2...sanity-plugin-blank-space-v1.1.0) (2026-06-13)
+
+
+### Features
+
+* add Sanity v6 peer support and CI coverage ([ed1ac5d](https://github.com/jordanl17/sanity-plugin-blank-space/commit/ed1ac5d658c014793d67bffc844ac8707deb4af2))
+
 ## [1.0.2](https://github.com/jordanl17/sanity-plugin-blank-space/compare/sanity-plugin-blank-space-v1.0.1...sanity-plugin-blank-space-v1.0.2) (2026-04-07)
 
 
