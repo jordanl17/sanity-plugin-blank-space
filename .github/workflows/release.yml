@@ -56,7 +56,4 @@ jobs:
         run: pnpm build:packages
 
       - name: Publish to npm
-        run: pnpm --filter sanity-plugin-blank-space publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+        run: pnpm --filter sanity-plugin-blank-space exec npm publish --provenance --access public
