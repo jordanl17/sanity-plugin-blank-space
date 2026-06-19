@@ -1,6 +1,6 @@
 # sanity-plugin-blank-space
 
-A [Sanity Studio](https://www.sanity.io/studio) plugin that renders a custom component in the structure tool's empty pane area - it's the _love story_ your Studio's blank space has been waiting for. Perfect for welcome screens, dashboards, or getting-started guides, and works _all too well_ with any existing structure configuration.
+A [Sanity Studio](https://www.sanity.io/studio) plugin that renders a custom component in the structure tool's empty pane area - it's the _love story_ your Studio's blank space has been waiting for. Perfect for welcome screens, dashboards, or getting-started guides, and works with any existing structure configuration.
 
 ![Demo of sanity-plugin-blank-space showing a custom welcome pane in Sanity Studio](https://raw.githubusercontent.com/jordanl17/sanity-plugin-blank-space/main/.github/assets/demo.png)
 
